@@ -22,6 +22,10 @@ set lazyredraw " Don't redraw when we don't have to
 set shortmess+=A " Don't give attention message when existing swap file is found
 set title " Show the filename in the window titlebar
 set softtabstop=2 " Tab key results in 2 spaces
+set backspace=indent,eol,start " Backspace over everything in insert mode
+set expandtab " Expand tabs to spaces
+set shiftwidth=2 " The # of spaces for indenting
+
 
 " yank to clipboard
 " https://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html#setting-vim-to-use-the-clipboard
@@ -33,3 +37,14 @@ if has("clipboard")
   endif
 endif
 
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+" Initialize plugin system
+call plug#end()

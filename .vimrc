@@ -46,5 +46,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
+Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --ts-completer' }
+
 " Initialize plugin system
 call plug#end()

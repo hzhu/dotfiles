@@ -25,7 +25,7 @@ set softtabstop=2 " Tab key results in 2 spaces
 set backspace=indent,eol,start " Backspace over everything in insert mode
 set expandtab " Expand tabs to spaces
 set shiftwidth=2 " The # of spaces for indenting
-
+set completeopt-=preview " Disables scratch preview window that comes up while navigating autocomplete list
 
 " yank to clipboard
 " https://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html#setting-vim-to-use-the-clipboard
@@ -46,6 +46,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
+" install plugin for autocompletion for typescript
 Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --ts-completer' }
 
 " Initialize plugin system
